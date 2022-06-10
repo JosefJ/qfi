@@ -1,6 +1,8 @@
 import {
   VStack,
-  Container, HStack, Text,
+  Container,
+  HStack,
+  Text,
   Heading,
   Drawer,
   DrawerOverlay,
@@ -9,7 +11,7 @@ import {
   IconButton,
   Icon,
   List,
-  ListItem
+  ListItem,
 } from "@chakra-ui/react";
 import { MagikButton } from "@qfi/ui";
 import { HiQrcode, HiCollection } from "react-icons/hi";
@@ -17,7 +19,6 @@ import { MdDashboard } from "react-icons/md";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 
 const Guide = () => {
-  
   return (
     <Container
       h="full"
@@ -45,58 +46,50 @@ const Guide = () => {
       }}>
       <VStack mt={20} spacing={10} h="full" alignItems="flex-start">
         <VStack spacing={6} alignItems="flex-start">
-          <Heading size="4xl">Recipient Guide</Heading>
+          <Heading size="4xl">Voter Quickstart Guide</Heading>
           <Text fontFamily={"archivo"}>
-            Welcome! If you’re here, you’re probably working on something awesome in the Prague community - thanks for
-            everything you do!
+          As an ETHPrague attendee, you can play an important role in both supporting the local community, and exploring new ways of funding public goods.
+
+
           </Text>
         </VStack>
         <VStack spacing={6} alignItems="flex-start">
-          <Heading size="md">What is Quadratic Funding?</Heading>
+          <Heading size="md">A wallet specific made for you.</Heading>
           <Text fontFamily={"archivo"}>
-            Quadratic Funding (QF) is a more democratic way for communities to decide how to allocate funds to public
-            goods. A pool of matching funds is distributed among recipient projects according to a formula that takes
-            into account both how many people value something, and the strength of people’s individual preferences.
+          Below you will find instructions to help support local projects through a Quadratic Funding round taking place only at ETHPrague. To learn more about Quadratic Funding, find our team in ETHprague and register to vote!
+
+
           </Text>
-          {/* <MagikButton /> */}
+          <MagikButton />
         </VStack>
         <VStack spacing={6} alignItems="flex-start">
-          <Heading size="md">What does it mean to sign up as a recipient?</Heading>
+          <Heading size="md">A wallet...that’s also a ballot.</Heading>
           <Text fontFamily={"archivo"}>
-            Adding your project makes you eligible to receive funds from the matching pool, but doesn’t guarantee
-            funding. How much each project receives will be decided by ETHPrague attendees who vote during the event.
-            You will need to be able to receive cryptocurrency (xDAI) in order to receive funds in the QF round; if
-            you’re uncertain about this feel free to get in touch and we’ll be happy to help.
+          At the bottom of your registration card is your ballot key - keep this safe! It’s an xDai wallet which you’ll use to vote in the Quadratic Funding round.
           </Text>
           <IconButton w={36} h={12} color="gray.800" icon={<Icon as={HiQrcode} boxSize={10} />} aria-label="Scan" />
         </VStack>
         <VStack spacing={6} alignItems="flex-start">
-          <Heading size="md">Who should sign up?</Heading>
+          <Heading size="md">Meet Projects</Heading>
           <Text fontFamily={"archivo"}>
-            We don’t have a lot of hard eligibility criteria, but your project should be a public good, often defined as
-            non-rivalrous (use by one person doesn’tprevent access by others) and non-excludable (anyone can access or
-            use it). It should also be:
+          Projects from across the Prague community have signed up to receive funding. Learn about them on the website or in the Quadratic Funding booth, pick the ones you would like to support and scan their QR code to add them to your ballot. 
+
+You can vote for up to 8 projects, and distribute your voice credits among them however you like. 
           </Text>
-          <List spacing={1} px={3}>
-            <ListItem>
-              <Text fontFamily={"archivo"}>• Local to Prague</Text>
-            </ListItem>
-            <ListItem>
-              <Text fontFamily={"archivo"}>• Valuable to the Ethereum community</Text>
-            </ListItem>
-            <ListItem>
-              <Text fontFamily={"archivo"}>• Not a scam</Text>
-            </ListItem>
-          </List>
           <IconButton
             w={36}
             h={12}
             color="gray.800"
             icon={<Icon as={HiCollection} boxSize={10} />}
-            aria-label="Ballot"
-          />
+            aria-label="Ballot" />
         </VStack>
-
+        <VStack spacing={6} alignItems="flex-start">
+          <Heading size="md">Submit your vote</Heading>
+          <Text fontFamily={"archivo"}>
+          One you’ve filled out your ballot, submit it onchain using your registration card to sign. Changed your mind? You can always submit a new ballot - only the last one you submit will be counted.
+          </Text>
+          <IconButton w={36} h={12} color="gray.800" icon={<Icon as={MdDashboard} boxSize={10} />} aria-label="Vote" />
+        </VStack>
         <VStack spacing={4}>
           <HStack justifyContent={"center"} spacing={[1, 2]}>
             <ColorModeSwitcher />
